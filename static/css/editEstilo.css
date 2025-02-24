@@ -260,6 +260,10 @@ section {
 .img_perfil{
     margin-top: 20px;
 }
+.img_perfil img{
+    width: 120px;
+    height: 120px;
+}
 
 .btn-change-img {
     background-color: #0060BB;
