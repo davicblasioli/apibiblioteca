@@ -1,0 +1,165 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+:root {
+    --azul: rgba(51, 128, 202, 1);
+    --azul-claro: rgba(238, 243, 255, 1);
+    --azul-escuro: rgba(12, 140, 225, 0.724);
+    --preto: black;
+    --branco: white;
+}
+
+body {
+    background-color: var(--branco);
+}
+
+.logo-header {
+    height: 100px;
+    width: auto;
+    padding: 20px;
+}
+
+section {
+    display: flex;
+}
+
+.titulo {
+    color: var(--azul);
+    text-align: center;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.formulario {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--branco);
+    border: 4px solid var(--azul-claro);
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: -100px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+}
+
+.coisa {
+    text-align: left;
+    color: var(--azul);
+    font-weight: bold;
+    font-size: 22px;
+    padding-top: 10px;
+    padding-bottom: 3px;
+}
+
+.inserir {  
+    border-radius: 5px;
+    padding: 7px; 
+    margin-bottom: 10px;
+    border: 3px solid var(--azul);
+    background-color: var(--azul-claro);
+    font-weight: bold;
+}
+
+input::placeholder {
+    font-weight: bold;
+    color: var(--preto);
+    opacity: 0.5;
+}
+
+.botao-login {
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: var(--azul);
+    margin-top: 20px;
+    background-color: var(--branco);
+    border: 3px solid var(--azul);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.botao-login:hover {
+    background-color: var(--azul);
+    color: var(--branco);
+    transition: 0.2s;
+}
+
+.texto {
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--azul);
+    transition: 0.2s;
+}
+
+.link:hover {
+    color: var(--azul-escuro);
+    transition: 0.2s;
+}
+
+.tudo {
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    display: flex;
+}
+
+.livro-1 {
+    height: 400px;
+    width: auto;
+    margin-top: 83px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--azul);
+    transition: 0.2s;
+}
+
+.link:hover {
+    color: var(--azul-escuro);
+    transition: 0.2s;
+}
+
+.final {
+    text-align: center;
+}
+
+@media (max-width: 426px) {
+    .livro-1 {
+        display: none;
+    }
+
+    .formulario {
+        margin-top: -20px;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .tudo {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 321px) {
+    .formulario {
+        margin: 5px;
+    }
+}
