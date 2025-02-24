@@ -123,3 +123,4 @@ def usuarios():
             'status': usuario[8],
         })
     return jsonify(mensagem='Lista de usuarios', usuarios=usuarios_dic)
+
