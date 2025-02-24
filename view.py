@@ -64,7 +64,7 @@ def livro_post():
 @app.route('/livros/<int:id>', methods=['PUT'])
 def livro_put(id):
     cursor = con.cursor()
-    cursor.execute("SELECT ID_LIVRO, TITULO, AUTOR, DATA_PUBLICACAO FROM LIVROS WHERE ID_LIVRO = ?", (id,))
+    cursor.execute("SELECT ID_LIVRO, TITULO, AUTOR, DATA_PUBLICACAO, ISBN, DESCRICAO, QUANTIDADE, CATEGORIA, STATUS FROM LIVROS WHERE ID_LIVRO = ?", (id,))
     livro_data = cursor.fetchone()
 
     if not livro_data:
@@ -74,10 +74,15 @@ def livro_put(id):
     data = request.get_json()
     titulo = data.get('titulo')
     autor = data.get('autor')
-    ano_publicacao = data.get('ano_publicacao')
+    data_publicacao = data.get('data_publicacao')
+    ISBN = data.get('ISBN')
+    descricao = data.get('descricao')
+    quantidade = data.get('quantidade')
+    categoria = data.get('categoria')
+    status = data.get('status')
 
-    cursor.execute("UPDATE LIVROS SET TITULO = ?, AUTOR = ?, ANO_PUBLICACAO = ? WHERE ID_LIVRO = ?",
-                   (titulo, autor, ano_publicacao, id))
+    cursor.execute("UPDATE LIVROS SET TITULO = ?, AUTOR = ?, DATA_PUBLICACAO = ?, ISBN = ?, DESCRICAO = ?, QUANTIDADE = ?, CATEGORIA = ?, STATUS = ? WHERE ID_LIVRO = ?",
+                   (titulo, autor, data_publicacao, ISBN, descricao, quantidade, categoria, status, id))
 
     con.commit()
     cursor.close()
@@ -98,7 +103,6 @@ def livro_put(id):
     })
 
 # ROTA USUÁRIOS
-
 @app.route('/Usuarios', methods=['GET'])
 def usuarios():
     cur = con.cursor()
